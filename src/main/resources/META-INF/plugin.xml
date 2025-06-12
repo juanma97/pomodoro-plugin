@@ -1,0 +1,52 @@
+<idea-plugin>
+    <!-- Unique identifier of the plugin -->
+    <id>com.juanmaperez.pomodoro</id>
+
+    <!-- Plugin name -->
+    <name>Pomodoro</name>
+
+    <!-- Author or organization -->
+    <vendor url="https://www.linkedin.com/in/juanma-perez/">Juanma Pérez</vendor>
+
+    <!-- Description for the plugin page and Plugin Manager -->
+    <description><![CDATA[
+        🍅 Boost your productivity with a built-in Pomodoro timer!<br><br>
+        - Fully integrated into the status bar<br>
+        - Customizable work/break durations<br>
+        - Auto-cycle between focus and break periods<br>
+        - Editor banner reminder at end of session<br>
+        - Lightweight and distraction-free<br><br>
+        <em>Ideal for developers who want to stay focused without leaving the IDE.</em>
+    ]]></description>
+
+    <!-- Plugin version -->
+    <version>1.0.0</version>
+
+    <!-- Minimum IDE build compatibility -->
+    <idea-version since-build="231" until-build="231.*" />
+
+    <!-- Required modules -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extensions -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Status bar widget -->
+        <statusBarWidgetFactory implementation="PomodoroStatusBarFactory" id="PomodoroTimer" />
+
+        <!-- Editor banner provider -->
+        <editorNotificationProvider
+                implementation="com.juanmaperez.pomodoro.PomodoroBannerProvider" />
+
+        <!-- Application services -->
+        <applicationService
+                serviceImplementation="com.juanmaperez.pomodoro.PomodoroSettings" />
+        <applicationService
+                serviceImplementation="com.juanmaperez.pomodoro.PomodoroService" />
+
+        <!-- Settings UI -->
+        <applicationConfigurable
+                instance="com.juanmaperez.pomodoro.PomodoroConfigurable"
+                id="pomodoro.settings"
+                displayName="Pomodoro Settings" />
+    </extensions>
+</idea-plugin>
