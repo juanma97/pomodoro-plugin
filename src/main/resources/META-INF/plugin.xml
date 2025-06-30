@@ -20,7 +20,7 @@
     ]]></description>
 
     <!-- Plugin version -->
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <!-- Minimum IDE build compatibility -->
     <idea-version since-build="231" until-build="231.*" />

@@ -28,7 +28,7 @@ dependencies {
 
 intellijPlatform {
   pluginConfiguration {
-    version = "1.0.0"
+    version = "1.0.1"
     name = "Pomodoro"
     description = "Plugin Pomodoro to manage time inside IDE, available in IntelliJ 2024.2 or recent versions."
     changeNotes = "Initial version"
